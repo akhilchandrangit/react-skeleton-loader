@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 export type Shape = 'rectangle' | 'circle';
 
-export interface Props {
+export interface SkeletonLoaderProps {
   width: number | string;
   height: number | string;
   count?: number;
@@ -35,7 +35,7 @@ const Node = styled.div`
   margin-right: 4px;
 `;
 
-const SkeletonLoader: React.FC<Props> = ({
+const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
   count = 1,
   width,
   height,

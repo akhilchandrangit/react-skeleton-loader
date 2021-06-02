@@ -2,6 +2,12 @@
   "name": "react-skeleton-loader",
   "version": "0.1.0",
   "private": true,
+  "directories": {
+    "build": "build"
+  },
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -19,14 +25,17 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start-storybook -p 9009 -s public",
+    "build": "tsc --build \"./tsconfig.json\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'"
+    "lint:fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
+    "clean": "rm -rf ./build",
+    "prebuild": "yarn clean",
+    "copy-files": "copyfiles -u 1 src/style/base.css build/",
+    "postbuild": "yarn run copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -64,6 +73,7 @@
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
+    "copyfiles": "^2.4.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
