@@ -1,5 +1,5 @@
 import React, { useState, ReactNode, useEffect } from 'react';
-import  styled, { keyframes }  from  'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export type Shape = 'rectangle' | 'circle';
 
@@ -49,18 +49,19 @@ const SkeletonLoader: React.FC<Props> = ({
 
   useEffect(() => {
     setElements(() => {
-      let nodes: ReactNode[]  = [];
+      const nodes: ReactNode[] = [];
       const nodeStyle: React.CSSProperties = {
         ...style,
         width,
         height,
-      }
+      };
 
       if (shape === 'circle') {
         nodeStyle.borderRadius = '50%';
       }
 
-      for (let i = 0 ; i < count ; i++) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < count; i++) {
         nodes.push(
           <Node
             className={`react-skeleton-loader-item ${className}`}
@@ -76,13 +77,10 @@ const SkeletonLoader: React.FC<Props> = ({
   return (
     <div className={`react-skeleton-loader ${wrapperClass}`}>
       {elements?.map((element: ReactNode) => (
-        <>
-          {element}
-        </>
+        <>{element}</>
       ))}
     </div>
   );
 };
 
 export default SkeletonLoader;
-

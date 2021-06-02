@@ -11,49 +11,28 @@ const stories = storiesOf('SkeletonLoader', module);
 stories.addDecorator(withKnobs);
 stories.addParameters({
   readme: {
-    content: README
-  }
+    content: README,
+  },
 });
 
-stories.add('default', () => {
-  return (
-    <SkeletonLoader
-      width={100}
-      height={100}
-    />
-  );
-});
+stories.add('default', () => <SkeletonLoader width={100} height={100} />);
 
-stories.add('with count', () => {
-  return (
-    <SkeletonLoader
-      width={150}
-      height={30}
-      count={4}
-    />
-  );
-});
+stories.add('with count', () => (
+  <SkeletonLoader width={150} height={30} count={4} />
+));
 
-stories.add('with custom style', () => {
-  return (
-    <SkeletonLoader
-      width={150}
-      height={30}
-      count={4}
-      style={{
-        marginRight: '20px',
-        borderRadius: '6px',
-      }}
-    />
-  );
-});
+stories.add('with custom style', () => (
+  <SkeletonLoader
+    width={150}
+    height={30}
+    count={4}
+    style={{
+      marginRight: '20px',
+      borderRadius: '6px',
+    }}
+  />
+));
 
-stories.add('circle', () => {
-  return (
-    <SkeletonLoader
-      width={100}
-      height={100}
-      shape="circle"
-    />
-  );
-});
+stories.add('circle', () => (
+  <SkeletonLoader width={100} height={100} shape="circle" />
+));
