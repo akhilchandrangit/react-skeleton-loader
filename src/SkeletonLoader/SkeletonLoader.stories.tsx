@@ -1,19 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-
-import README from './README.md';
+import { withKnobs } from '@storybook/addon-knobs';
 import SkeletonLoader from './SkeletonLoader';
 
 const stories = storiesOf('SkeletonLoader', module);
 
 stories.addDecorator(withKnobs);
-stories.addParameters({
-  readme: {
-    content: README,
-  },
-});
 
 stories.add('default', () => <SkeletonLoader width={100} height={100} />);
 
@@ -35,4 +27,25 @@ stories.add('with custom style', () => (
 
 stories.add('circle', () => (
   <SkeletonLoader width={100} height={100} shape="circle" />
+));
+
+stories.add('color', () => (
+  <>
+    <SkeletonLoader width={400} height={30} color="#F5A492" />
+    <SkeletonLoader width={400} height={30} count={3} color="#F5A492" />
+  </>
+));
+
+stories.add('hide animation', () => (
+  <SkeletonLoader width={100} height={100} shape="circle" hideAnimation />
+));
+
+stories.add('hide gradient', () => (
+  <SkeletonLoader
+    width={100}
+    height={100}
+    shape="circle"
+    color="#F5A492"
+    hideGradient
+  />
 ));

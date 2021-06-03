@@ -1,5 +1,7 @@
 import React, { useState, ReactNode, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import hexToRgba from 'hex-to-rgba';
+import { DEFAULT_BG, BG_SHADE } from '../config/config';
 
 export type Shape = 'rectangle' | 'circle';
 
@@ -12,6 +14,8 @@ export interface SkeletonLoaderProps {
   color?: string;
   style?: React.CSSProperties;
   shape?: Shape;
+  hideAnimation?: boolean;
+  hideGradient?: boolean;
 }
 
 const Sprinkle = keyframes`
@@ -24,12 +28,12 @@ const Sprinkle = keyframes`
 `;
 
 const Node = styled.div`
-  float: left;
+  display: inline-block;
   width: 140px;
   height: 16px;
   margin-top: 12px;
   border-radius: 4px;
-  background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+  background-image: -webkit-linear-gradient(left, ${DEFAULT_BG} 0%, ${BG_SHADE} 20%, ${DEFAULT_BG} 40%, ${DEFAULT_BG} 100%);
   background-size: 600px;
   animation: ${Sprinkle} 1.6s infinite linear;
   margin-right: 4px;
@@ -44,6 +48,8 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
   color,
   style,
   shape = 'rectangle',
+  hideAnimation = false,
+  hideGradient = false,
 }) => {
   const [elements, setElements] = useState<ReactNode[] | null>(null);
 
@@ -58,6 +64,19 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
 
       if (shape === 'circle') {
         nodeStyle.borderRadius = '50%';
+      }
+
+      if (color) {
+        if (hideGradient) {
+          nodeStyle.backgroundColor = color;
+          nodeStyle.backgroundImage = 'none';
+        } else {
+          nodeStyle.backgroundImage = `-webkit-linear-gradient(left, ${hexToRgba(color)} 0%, ${hexToRgba(color, 0.8)} 20%, ${hexToRgba(color)} 40%, ${hexToRgba(color)} 100%)`;
+        }
+      }
+
+      if (hideAnimation) {
+        nodeStyle.animationPlayState = 'paused';
       }
 
       // eslint-disable-next-line no-plusplus

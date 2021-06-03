@@ -1,6 +1,15 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-const stories = storiesOf("Welcome", module);
-stories.add("to your library", () => (
-  <div>This is your new library. </div>
+import README from '../README.md';
+
+const stories = storiesOf("README", module);
+
+stories.addParameters({
+  readme: {
+    content: README,
+  },
+});
+
+stories.add("README.md", () => (
+  <></>
 ));

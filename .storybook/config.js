@@ -2,10 +2,6 @@ import React from "react";
 import { addReadme } from 'storybook-readme';
 import { create } from '@storybook/theming';
 import { addDecorator, addParameters, configure } from "@storybook/react";
-// import { ThemeProvider } from "react-jss";
-
-// import theme from "../src/style/globalStyle";
-// import '../src/style/base.css';
 
 const basicTheme = create({
   base: 'light',
@@ -50,11 +46,9 @@ addParameters({
 addDecorator(addReadme);
 
 addDecorator(story => (
-  // <ThemeProvider theme={theme}>
-  <div>
+  <>
     {story()}
-  </div>
-  // </ThemeProvider>
+  </>
 ));
 
 const loaderFn = () => {
