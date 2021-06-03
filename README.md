@@ -51,7 +51,7 @@ Required
 Width of loader
 ```javascript
  <SkeletonLoader height={30} width={150} />
- SkeletonLoader height={30} width="50%" />
+ <SkeletonLoader height={30} width="50%" />
 ```
 ### count (number)
 
