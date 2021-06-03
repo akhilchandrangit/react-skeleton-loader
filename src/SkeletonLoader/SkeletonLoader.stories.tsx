@@ -7,7 +7,9 @@ const stories = storiesOf('SkeletonLoader', module);
 
 stories.addDecorator(withKnobs);
 
-stories.add('default', () => <SkeletonLoader width={100} height={100} />);
+stories.add('default', () => <SkeletonLoader height={20} />);
+
+stories.add('width', () => <SkeletonLoader width={100} height={20} />);
 
 stories.add('with count', () => (
   <SkeletonLoader width={150} height={30} count={4} />

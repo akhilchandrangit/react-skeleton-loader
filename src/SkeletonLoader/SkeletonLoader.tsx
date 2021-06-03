@@ -6,8 +6,8 @@ import { DEFAULT_BG, BG_SHADE } from '../config/config';
 export type Shape = 'rectangle' | 'circle';
 
 export interface SkeletonLoaderProps {
-  width: number | string;
   height: number | string;
+  width?: number | string;
   count?: number;
   className?: string;
   wrapperClass?: string;
@@ -44,6 +44,8 @@ const Node = styled.div`
   background-size: 600px;
   animation: ${Sprinkle} 1.6s infinite linear;
   margin-right: 4px;
+  height: 1px;
+  width: 100%;
 `;
 
 const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
@@ -92,8 +94,7 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
       }
 
       if (borderRadius) {
-        nodeStyle.borderRadius =
-          typeof borderRadius === 'number' ? `${borderRadius}px` : borderRadius;
+        nodeStyle.borderRadius = borderRadius
       }
 
       // eslint-disable-next-line no-plusplus
