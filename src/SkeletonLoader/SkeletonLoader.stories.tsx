@@ -14,12 +14,7 @@ stories.add('with count', () => (
 ));
 
 stories.add('border radius', () => (
-  <SkeletonLoader
-    width={150}
-    height={30}
-    count={4}
-    borderRadius={8}
-  />
+  <SkeletonLoader width={150} height={30} count={4} borderRadius={8} />
 ));
 
 stories.add('with custom style', () => (

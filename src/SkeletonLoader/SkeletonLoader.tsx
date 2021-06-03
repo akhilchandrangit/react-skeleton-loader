@@ -92,9 +92,8 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
       }
 
       if (borderRadius) {
-        nodeStyle.borderRadius = typeof borderRadius === 'number' 
-          ? `${borderRadius}px`
-          : borderRadius;
+        nodeStyle.borderRadius =
+          typeof borderRadius === 'number' ? `${borderRadius}px` : borderRadius;
       }
 
       // eslint-disable-next-line no-plusplus
