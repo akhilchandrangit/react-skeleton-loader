@@ -1,6 +1,6 @@
 {
-  "name": "react-skeleton-loader",
-  "version": "0.1.1",
+  "name": "react-skeleton-load",
+  "version": "0.1.2",
   "description": "Skeleton loader for react",
   "author": "You",
   "license": "MIT",
@@ -12,6 +12,10 @@
     "skeleton loader",
     "react loader"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akhilchandrangit/react-skeleton-loader"
+  },
   "directories": {
     "build": "build"
   },
