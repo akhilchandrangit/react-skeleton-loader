@@ -16,6 +16,7 @@ export interface SkeletonLoaderProps {
   shape?: Shape;
   hideAnimation?: boolean;
   hideGradient?: boolean;
+  borderRadius?: number | string;
 }
 
 const Sprinkle = keyframes`
@@ -56,6 +57,7 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
   shape = 'rectangle',
   hideAnimation = false,
   hideGradient = false,
+  borderRadius,
 }) => {
   const [elements, setElements] = useState<ReactNode[] | null>(null);
 
@@ -87,6 +89,12 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
 
       if (hideAnimation) {
         nodeStyle.animationPlayState = 'paused';
+      }
+
+      if (borderRadius) {
+        nodeStyle.borderRadius = typeof borderRadius === 'number' 
+          ? `${borderRadius}px`
+          : borderRadius;
       }
 
       // eslint-disable-next-line no-plusplus

@@ -13,6 +13,15 @@ stories.add('with count', () => (
   <SkeletonLoader width={150} height={30} count={4} />
 ));
 
+stories.add('border radius', () => (
+  <SkeletonLoader
+    width={150}
+    height={30}
+    count={4}
+    borderRadius={8}
+  />
+));
+
 stories.add('with custom style', () => (
   <SkeletonLoader
     width={150}
@@ -20,7 +29,6 @@ stories.add('with custom style', () => (
     count={4}
     style={{
       marginRight: '20px',
-      borderRadius: '6px',
     }}
   />
 ));
