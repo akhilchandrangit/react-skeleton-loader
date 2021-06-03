@@ -1,7 +1,17 @@
 {
   "name": "react-skeleton-loader",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "description": "Skeleton loader for react",
+  "author": "You",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "loader",
+    "skeleton loader",
+    "react loader"
+  ],
   "directories": {
     "build": "build"
   },
