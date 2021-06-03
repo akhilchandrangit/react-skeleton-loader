@@ -33,7 +33,13 @@ const Node = styled.div`
   height: 16px;
   margin-top: 12px;
   border-radius: 4px;
-  background-image: -webkit-linear-gradient(left, ${DEFAULT_BG} 0%, ${BG_SHADE} 20%, ${DEFAULT_BG} 40%, ${DEFAULT_BG} 100%);
+  background-image: -webkit-linear-gradient(
+    left,
+    ${DEFAULT_BG} 0%,
+    ${BG_SHADE} 20%,
+    ${DEFAULT_BG} 40%,
+    ${DEFAULT_BG} 100%
+  );
   background-size: 600px;
   animation: ${Sprinkle} 1.6s infinite linear;
   margin-right: 4px;
@@ -71,7 +77,11 @@ const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
           nodeStyle.backgroundColor = color;
           nodeStyle.backgroundImage = 'none';
         } else {
-          nodeStyle.backgroundImage = `-webkit-linear-gradient(left, ${hexToRgba(color)} 0%, ${hexToRgba(color, 0.8)} 20%, ${hexToRgba(color)} 40%, ${hexToRgba(color)} 100%)`;
+          nodeStyle.backgroundImage = `-webkit-linear-gradient(left, ${hexToRgba(
+            color
+          )} 0%, ${hexToRgba(color, 0.8)} 20%, ${hexToRgba(
+            color
+          )} 40%, ${hexToRgba(color)} 100%)`;
         }
       }
 
