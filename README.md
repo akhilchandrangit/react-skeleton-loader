@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-skeleton-loader 👋</h1>
+<h1 align="center">Welcome to react-skeleton-load 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/react-skeleton-loader" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-skeleton-loader.svg">
@@ -14,19 +14,19 @@
 
 ## Installation and usage
 
-Install react-skeleton-loader 
+Install react-skeleton-load
 
 ```sh
-npm i react-skeleton-loader
+npm i react-skeleton-load
 ```
 ```sh
-yarn add react-skeleton-loader
+yarn add react-skeleton-load
 ```
 
-Now you can import react-skeleton-loader in any of your components
+Now you can import react-skeleton-load in any of your components
 
 ```javascript
-import SkeletonLoader from 'react-skeleton-loader';
+import SkeletonLoader from 'react-skeleton-load';
 
 const Articles = () => {
   return (

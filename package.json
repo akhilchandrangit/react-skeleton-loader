@@ -1,9 +1,11 @@
 {
   "name": "react-skeleton-load",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Skeleton loader for react",
   "author": "You",
   "license": "MIT",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "keywords": [
     "react",
     "javascript",
