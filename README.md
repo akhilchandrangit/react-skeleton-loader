@@ -135,7 +135,6 @@ Changes the border radius of loader.
 
 * Website: https://github.com/akhilchandrangit/react-skeleton-loader
 * Github: [@akhilchandrangit](https://github.com/akhilchandrangit)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/akhil-chandran-a-k-b85b08112\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/akhil-chandran-a-k-b85b08112\/)
 
 ## Show your support
 
